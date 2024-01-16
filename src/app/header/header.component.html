@@ -1,0 +1,10 @@
+<div class="bg-blue-800 px-8 py-4 flex md:flex-row flex-col gap-2 md:gap-0 justify-between items-center">
+    <h1 class="lg:text-4xl md:text-3xl text-2xl text-white font-black">Weather App</h1>
+    
+    <form #myForm="ngForm" class="flex gap-2">
+        <input type="text" name="cityName" class="lg:w-[400px] sm:w-[280px] w-[140px]  rounded-lg lg:px-4 md:px-3 sm:px-1 md:py-2 sm:py-1 outline-none pl-2" [(ngModel)]="temp" placeholder="Enter City Name" >
+        <!-- <p>{{ city.value }}</p> -->
+        <button type="submit" (click)="reset_input()" class="sm:w-[150px] w-[80px] bg-blue-500 text-white rounded-lg px-4 py-2">Search</button>
+    </form>
+</div>
+<app-weather-card [cityName]="cityName" [weatherData]="weatherData"></app-weather-card>

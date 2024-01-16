@@ -1,0 +1,55 @@
+<div class="flex flex-col justify-center items-center w-[100%] px-[100px] xl:pt-[60px] pt-[50px]">
+    <!--! UPPER BODY OF CARD ( FOR MAIN INFO ) -->
+    <div class="relative upper-body sm:w-[300px] w-[250px] sm:h-[300px] h-[250px] overflow-hidden rounded-tl-xl rounded-tr-xl">
+        <!-- Pic for Cold weather -->
+        @if (weatherData.main.temp < 16){
+            <img src="../../assets/cold-weather.jpg" class="w-[100%]">
+
+        }@else {
+            <img src="../../assets/hot-weather.jpeg" alt="">
+        }
+        <div class="absolute top-[35%] flex flex-col justify-center items-center w-[100%]">
+            <p class="z-10 text-lg text-slate-800">{{cityName}}</p>
+            <h2 class="z-10 text-5xl font-black text-slate-800">{{weatherData.main.temp | number: '1.0-0'}}°C</h2>
+        </div>
+
+        <!-- Pic for Hot weather -->
+    </div>
+
+
+
+    <!--! LOWER BODY OF CARD ( FOR EXTRA INFO ) -->
+    <div class="lower-body bg-blue-900 text-white sm:w-[300px] w-[250px] text-center rounded-bl-xl rounded-br-xl p-4">
+        <h3 class="text-lg">More Information</h3>
+        <div class="grid grid-cols-2 gap-4 p-4 content bg-blue-800 rounded-bl-xl rounded-br-xl">
+            <div class="flex items-center gap-2clear">
+                <figure class="flex items-center flex-col">
+                    <img src="../../../assets/cold-temperature.png" alt="" class="h-[32px] w-[32px]">
+                    <figcaption class="text-xs text-center">Min</figcaption>
+                </figure>
+                <p>{{weatherData.main.temp_min | number: '1.0-0'}}°C</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <figure class="flex items-center flex-col">
+                    <img src="../../../assets/high-temperature.png" alt="" class="h-[32px] w-[32px]">
+                    <figcaption class="text-xs text-center">Max</figcaption>
+                </figure>
+                <p>{{weatherData.main.temp_max | number: '1.0-0'}}°C</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <figure class="flex items-center flex-col">
+                    <img src="../../../assets/weather.png" alt="" class="h-[32px] w-[32px]">
+                    <figcaption class="text-xs text-center">WindSpeed</figcaption>
+                </figure>
+                <p>{{weatherData.wind.speed | number: '1.0-0'}} Km/h</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <figure class="flex items-center flex-col">
+                    <img src="../../../assets/humidity.png" alt="" class="h-[32px] w-[32px]">
+                    <figcaption class="text-xs text-center">Humidity</figcaption>
+                </figure>
+                <p>{{weatherData.main.humidity | number: '1.0-0'}}%</p>
+            </div>
+        </div>
+    </div>
+</div>

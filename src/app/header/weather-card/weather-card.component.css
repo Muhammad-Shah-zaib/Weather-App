@@ -1,0 +1,7 @@
+.upper-body,.lower-body{
+    box-shadow: 8px 0px 5px #172554;
+}
+
+.lower-body .content {
+    box-shadow: 2px 2px 5px #172554;
+}
