@@ -7,4 +7,10 @@
         <button type="submit" (click)="reset_input()" class="sm:w-[150px] w-[80px] bg-blue-500 text-white rounded-lg px-4 py-2">Search</button>
     </form>
 </div>
-<app-weather-card [cityName]="cityName" [weatherData]="weatherData"></app-weather-card>
+@if (weatherData !== undefined){
+<app-weather-card [weatherData]="weatherData"></app-weather-card>
+}@else {
+    <!-- <h1 class="text-2xl text-center mt-4">No Data Found</h1> -->
+    <app-no-data-found></app-no-data-found>
+}
+<router-outlet></router-outlet>

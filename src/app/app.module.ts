@@ -6,18 +6,23 @@ import { AppComponent } from './app.component';
 import { WeatherCardComponent } from './header/weather-card/weather-card.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { NoDataFoundComponent } from './no-data-found/no-data-found.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherCardComponent,
-    HeaderComponent
+    HeaderComponent,
+    NoDataFoundComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     provideClientHydration()
